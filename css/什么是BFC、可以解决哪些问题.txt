@@ -1,0 +1,5 @@
+https://segmentfault.com/a/1190000013527324
+
+概括：
+1、高度塌陷
+2、外边距margin
