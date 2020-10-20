@@ -1,0 +1,9 @@
+1、空元素并且clear:both;
+2、overflow: hidden或者auto;
+3、.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
