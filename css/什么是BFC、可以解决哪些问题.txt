@@ -3,3 +3,9 @@ https://segmentfault.com/a/1190000013527324
 概括：
 1、高度塌陷
 2、外边距margin
+
+产生BFC：
+1、float不为none
+2、overflow不为visible
+3、position: absolute / fixed
+4、display: flex / table-cell / inline-block

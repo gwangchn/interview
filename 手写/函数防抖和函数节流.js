@@ -1,20 +1,31 @@
 // 函数防抖
-function debounce(fn, wait) {
-    var timer = null;
+function debounce(fn, time) {
+    let timer = null;
     return function () {
-        var context = this
-        var args = arguments
         if (timer) {
-            clearTimeout(timer);
-            timer = null;
+            clearTimeout(timer)
         }
-        timer = setTimeout(function () {
-            fn.apply(context, args)
-        }, wait)
+        timer = setTimeout(() => {
+            fn.apply(this, arguments)
+        }, time)
     }
 }
 
 // 函数节流
+function throttle(fn, time) {
+    let canRun = true;
+    return function () {
+        if (!canRun) {
+            return
+        }
+        canRun = false;
+        setTimeout(() => {
+            fn.apply(this, arguments);
+            canRun = true;
+        }, time)
+    }
+}
+
 function throttle(fn, gapTime) {
     let _lastTime = null;
     return function () {

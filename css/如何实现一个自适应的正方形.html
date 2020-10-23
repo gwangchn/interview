@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .square {
+            width: 10vw;
+            height: 10vw;
+            background: red;
+        }
+        .square2 {
+            width: 10%;
+            padding-bottom: 10%; 
+            height: 0;/* 防止内容撑开多余的高度 */
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <h6>第一种：利用CSS3的vw单位</h6>
+    <div class="square"></div>
+    <h6>第二种：利用margin或者padding的百分比计算是参照父元素的width属性</h6>
+    <div class="square2"></div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,html{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            display: flex;
+        }
+        .left{
+            flex-basis:200px;
+            background: green;
+        }
+        .main{
+            flex: 1;
+            background: red;
+        }
+        .right{
+            flex-basis:200px;
+            background: green;
+        }
+
+        .container2 {
+            position: relative;
+        }
+        .left2,.right2{
+            position: absolute;
+            top: 0;
+            background: red;
+        }
+        .left2{
+            left: 0;
+            width: 200px;
+        }
+        .right2{
+            right: 0;
+            width: 200px;
+        }
+        .main2{
+            margin: 0 200px ;
+            background: green;
+        }
+
+        .left3{
+            float:left;
+            width:200px;
+            background:red;
+        }
+        .main3{
+            margin:0 200px;
+            background: green;
+        }
+        .right3{
+            float:right;
+            width:200px;
+            background:red;
+        }
+    </style>
+</head>
+<body>
+    <div>第一种：flex</div>
+    <div class="container">
+        <div class="left">left</div>
+        <div class="main">main</div>
+        <div class="right">right</div>
+    </div>
+    <div>第二种：position + margin</div>
+    <div class="container2">
+        <div class="left2">left</div>
+        <div class="right2">right</div>
+        <div class="main2">main</div>
+    </div>
+    <div>第三种：float + margin</div>
+    <div class="container3">
+        <div class="left3">left</div>
+        <div class="right3">right</div>
+        <div class="main3">main</div>
+    </div>
+</body>
+</html>
