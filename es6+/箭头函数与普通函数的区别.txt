@@ -1,0 +1,8 @@
+https://juejin.im/post/6844903805960585224
+
+1、没有this
+2、继承来的this永远不变，call、apply、bind无法改变
+3、箭头函数不能作为构造函数使用
+4、没有arguments
+5、没有prototype
+6、箭头函数不能用作Generator函数，不能使用yeild关键字
