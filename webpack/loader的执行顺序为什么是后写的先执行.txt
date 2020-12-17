@@ -1,0 +1,3 @@
+https://www.jianshu.com/p/eb268cb0f913
+
+借鉴函数式编程中函数组合compose的方式

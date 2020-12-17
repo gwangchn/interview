@@ -1,0 +1,36 @@
+1、使用高版本的 Webpack 和 Node.js
+2、多进程/多实例构建：HappyPack(不维护了)、thread-loader
+3、压缩代码 
+    多进程并行压缩
+      webpack-paralle-uglify-plugin
+      uglifyjs-webpack-plugin 开启 parallel 参数 (不支持ES6)
+      terser-webpack-plugin 开启 parallel 参数
+    通过 mini-css-extract-plugin 提取 Chunk 中的 CSS 代码到单独文件，通过 css-loader 的 minimize 选项开启 cssnano 压缩 CSS。
+4、图片压缩
+    使用基于 Node 库的 imagemin (很多定制选项、可以处理多种图片格式)
+    配置 image-webpack-loader
+5、缩小打包作用域
+    exclude/include (确定 loader 规则范围)
+    resolve.modules 指明第三方模块的绝对路径 (减少不必要的查找)
+    resolve.mainFields 只采用 main 字段作为入口文件描述字段 (减少搜索步骤，需要考虑到所有运行时依赖的第三方模块的入口文件描述字段)
+    resolve.extensions 尽可能减少后缀尝试的可能性
+    noParse 对完全不需要解析的库进行忽略 (不去解析但仍会打包到 bundle 中，注意被忽略掉的文件里不应该包含 import、require、define 等模块化语句)
+    IgnorePlugin (完全排除模块)
+    合理使用alias
+6、提取页面公共资源
+    基础包分离
+      使用 html-webpack-externals-plugin，将基础包通过 CDN 引入，不打入 bundle 中使用
+      SplitChunksPlugin 进行(公共脚本、基础包、页面公共文件)分离(Webpack4内置) ，替代了 CommonsChunkPlugin 插件
+7、充分利用缓存提升二次构建速度
+    babel-loader 开启缓存
+    terser-webpack-plugin 开启缓存
+    使用 cache-loader 或者 hard-source-webpack-plugin
+8、Tree shaking
+    使用esModule方式编写代码
+    babel设置modules为false
+    purgecss-webpack-plugin 和 mini-css-extract-plugin配合使用(建议)
+9、Scope hoisting
+    需要配置 mainFields 对第三方模块优先采用 jsnext:main 中指向的ES6模块化语法
+10、动态Polyfill
+    babel中配置
+    polyfill-service

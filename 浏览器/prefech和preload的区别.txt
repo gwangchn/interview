@@ -1,0 +1,3 @@
+https://blog.fundebug.com/2019/04/11/understand-preload-and-prefetch/
+
+preload 加载资源一般是当前页面需要的，prefetch 一般是其它页面有可能用到的资源。

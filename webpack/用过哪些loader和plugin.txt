@@ -1,0 +1,30 @@
+raw-loader: 用字符串的格式加载文件原始内容（utf-8）
+file-loader: 把文件输出到一个文件夹中，在代码中通过相对 URL 去引用输出的文件 (处理图片和字体)
+url-loader: 与 file-loader 类似，区别是用户可以设置一个阈值，大于阈值会交给 file-loader 处理，
+            小于阈值时返回文件 base64 形式编码 (处理图片和字体)
+babel-loader: 把 ES6 转换成 ES5
+sass-loader: 将SCSS/SASS代码转换成CSS
+css-loader: 加载 CSS，支持模块化、压缩、文件导入等特性
+style-loader: 把 CSS 代码注入到 JavaScript 中，通过 DOM 操作去加载 CSS
+postcss-loader: 扩展 CSS 语法，使用下一代 CSS，可以配合 autoprefixer 插件自动补齐 CSS3 前缀
+vue-loader: 加载 Vue.js 单文件组件
+
+cache-loader: 可以在一些性能开销较大的 Loader 之前添加，目的是将结果缓存到磁盘里
+ts-loader: 将 TypeScript 转换成 JavaScript
+awesome-typescript-loader: 将 TypeScript 转换成 JavaScript，性能优于 ts-loader
+svg-sprite-loader: 根据导入的 svg 文件自动生成 symbol 标签并插入 html
+
+
+define-plugin: 定义环境变量 (Webpack4 之后指定 mode 会自动配置)
+ignore-plugin: 忽略部分文件
+html-webpack-plugin: 根据模板自动生成html代码，并自动引用css和js文件
+terser-webpack-plugin: 支持压缩 ES6 (Webpack4)
+mini-css-extract-plugin: 分离样式文件，CSS 提取为独立文件，支持按需加载 (替代extract-text-webpack-plugin)
+optimize-css-assets-webpack-plugin: 压缩css文件
+clean-webpack-plugin: 目录清理
+friendly-errors-webpack-plugin: 可以识别某些特定的webpack错误，并优化它们来提供一个更好的开发环境
+happypack: 通过多进程模型，来加速代码构建
+webpackbar: 编译进度条
+VueLoaderPlugin: 将你定义过的其它规则复制并应用到 .vue 文件里相应语言的块。
+例如，如果你有一条匹配 /\.js$/ 的规则，那么它会应用到 .vue 文件里的 <script> 块
+filemanager-webpack-plugin: 构建前后允许用户复制、压缩（zip）、移动、删除文件或文件夹
