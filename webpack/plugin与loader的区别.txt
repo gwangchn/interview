@@ -1,0 +1,2 @@
+loader：加载解析非js文件，不需要声明
+plugin：监听webpack声明周期广播的事件，调用webpack的api做扩展功能

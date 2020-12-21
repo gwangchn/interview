@@ -1,0 +1,7 @@
+https://github.com/lihongxun945/diving-into-webpack/blob/master/6-process-pipe-line.md
+https://juejin.cn/post/6844904046294204429
+
+初始化: 读取与合并配置参数，加载 Plugin，实例化 Compiler，调用compiler.run
+make: 从 Entry 出发，针对每个 Module 串行调用对应的 Loader 去翻译文件的内容，再找到该 Module 依赖的 Module，递归地进行编译处理
+seal: 生成hash、生成内容、根据依赖关系生成chunk
+emit: 生成文件
