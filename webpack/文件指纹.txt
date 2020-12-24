@@ -1,0 +1,7 @@
+https://juejin.cn/post/6875511103716229133
+
+Hash：和整个项目的构建相关，只要项目文件有修改，整个项目构建的 hash 值就会更改
+Chunkhash：和 Webpack 打包的 chunk 有关，不同的 entry 会生出不同的 chunkhash
+Contenthash：根据文件内容来定义 hash，文件内容不变，则 contenthash 不变
+
+url-loader中的hash不同，是根据字体或图片内容生成的

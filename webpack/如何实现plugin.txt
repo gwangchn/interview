@@ -1,0 +1,19 @@
+https://juejin.cn/post/6844904102862782471
+https://juejin.cn/post/6844903713312604173
+https://cloud.tencent.com/developer/article/1632717
+
+一个JavaScript类函数。
+在函数原型 (prototype)中定义一个注入compiler对象的apply方法。
+apply函数中通过compiler插入指定的事件钩子,在钩子回调中拿到compilation对象
+使用compilation操纵修改webapack内部实例数据。
+异步插件，数据处理完后使用callback回调
+
+
+compiler 暴露了和 Webpack 整个生命周期相关的钩子
+compilation 暴露了与模块和依赖有关的粒度更小的事件钩子
+插件需要在其原型上绑定apply方法，才能访问 compiler 实例
+传给每个插件的 compiler 和 compilation对象都是同一个引用，若在一个插件中修改了它们身上的属性，会影响后面的插件
+找出合适的事件点去完成想要的功能
+  emit 事件发生时，可以读取到最终输出的资源、代码块、模块及其依赖，并进行修改(emit 事件是修改 Webpack 输出资源的最后时机)
+  watch-run 当依赖的文件发生变化时会触发
+异步的事件需要在插件处理完任务时调用回调函数通知 Webpack 进入下一个流程，不然会卡住

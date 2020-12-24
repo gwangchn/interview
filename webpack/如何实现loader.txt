@@ -1,0 +1,8 @@
+https://juejin.cn/post/6844904131157557256
+https://blog.csdn.net/Bule_daze/article/details/106427995
+
+链式调用、单一职责
+可调用任意nodejs库
+尽可能异步化loader，如果计算量小，同步也可以
+使用 loader-utils 和 schema-utils 为我们提供的实用工具
+加载本地 Loader 方法Npm link和ResolveLoader

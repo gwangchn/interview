@@ -1,0 +1,10 @@
+https://zhuanlan.zhihu.com/p/30669007
+
+1、webpack对文件系统watch，发生改变打包到内存
+2、wds通过ws通知clinet发生改变，先hash后ok
+3、ok后判断是否热更新，如果热更新，调用文件列表（json）和文件内容（jsonp）
+4、调用hotApply对模块进行热更替
+5、业务代码可监听module.hot进行业务操作
+
+注意：
+wds修改了webpack的entry属性，加入了wds的代码，client才能接受wds的通知
