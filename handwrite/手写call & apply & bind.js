@@ -5,7 +5,7 @@ Function.prototype.myCall = function (context) {
     context.fn = this;
     var arr = [];
     for (var i = 1; i < arguments.length; i++) {
-        arr.push('argument[' + i + ']')
+        arr.push('arguments[' + i + ']')
     }
     var result = eval('context.fn(' + arr + ')');
     delete context.fn;
