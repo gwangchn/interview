@@ -1,1 +1,12 @@
 https://juejin.im/post/6844903805323051021
+
+父组件beforeCreated
+父组件created
+父组件beforeMounted
+子组件beforeCreated
+子组件created
+子组件beforeMounted
+子组件mounted
+父组件mounted
+
+从父组件beforeMounted开始切入，从里向外逐层mounted

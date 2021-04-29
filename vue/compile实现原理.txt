@@ -1,0 +1,9 @@
+https://blog.csdn.net/lznism666/article/details/108738936
+https://zhuanlan.zhihu.com/p/73010391
+
+1、parse：接收 template 原始模板，按照模板的节点 和数据 生成对应的 ast
+2、optimize：遍历递归每一个ast节点，标记静态的节点（没有绑定任何动态数据），
+            这样就知道那部分不会变化，于是在页面需要更新时，减少去比对这部分DOM
+            从而达到性能优化的目的
+3、generate：把前两步生成完善的 ast 组装成 render 字符串（这个 render 变成函数后是可执行的函数，
+            不过现在是字符串的形态，后面会转成函数）
