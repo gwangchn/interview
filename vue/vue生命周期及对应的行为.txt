@@ -1,1 +1,10 @@
 https://juejin.im/post/6844903925347254285
+
+1、initLifecycle(初始化声明周期的一些状态变量)、initEvents（初始化事件的容器）、initRender(初始化创建元素的方法)
+2、beforeCreate
+3、initInjections、initState(初始化状态数据)、initProvide
+4、created
+5、$mount并且判断是否存在render
+6、beforeMount
+7、初始化渲染watcher
+8、mounted
