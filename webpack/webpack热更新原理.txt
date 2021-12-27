@@ -1,4 +1,5 @@
 https://zhuanlan.zhihu.com/p/30669007
+https://juejin.cn/post/6844904008432222215
 
 1、webpack对文件系统watch，发生改变打包到内存
 2、wds通过ws通知clinet发生改变，先hash后ok
