@@ -12,24 +12,24 @@ let merge = function(nums1, m, nums2, n) {
   let i = m - 1;
   let j = n - 1;
   // 第三个指针指向第一个数组的末尾 填充数据
-  let k = arr1.length - 1;
+  let k = nums1.length - 1;
 
   while (i >= 0 && j >= 0) {
-    let num1 = arr1[i];
-    let num2 = arr2[j];
+    let val1 = nums1[i];
+    let val2 = nums2[j];
 
-    if (num1 > num2) {
-      arr1[k] = num1;
+    if (val1 > val2) {
+      nums1[k] = val1;
       i--;
     } else {
-      arr1[k] = num2;
+      nums1[k] = val2;
       j--;
     }
     k--;
   }
 
   while (j >= 0) {
-    arr1[k] = arr2[j];
+    nums1[k] = nums2[j];
     j--;
     k--;
   }
