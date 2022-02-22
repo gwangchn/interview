@@ -1,6 +1,4 @@
 /**
- * https://leetcode-cn.com/problems/longest-word-lcci/
- * 
  * @param {string} s
  * @param {string[]} wordDict
  * @return {boolean}
@@ -14,7 +12,7 @@ let wordBreak = function(s, wordDict) {
   dp[0] = true
 
   for (let i = 0; i <= n; i++) {
-    for (let j = i; j >= 0; j--) {
+    for (let j = i - 1; j >= 0; j--) {
       let word = s.slice(j, i)
       if (wordSet.has(word) && dp[j]) {
         dp[i] = true
@@ -42,7 +40,7 @@ let longestWord = function(words) {
   words = Array.from(new Set(words))
   for (let i = 0; i < words.length; i++) {
     let word = words[i]
-    let rest = words.slice(0, i).concat(words.slice(i + 1))
+    let rest = words.slice(i + 1)
     if (wordBreak(word, rest)) {
       return word
     }
