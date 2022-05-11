@@ -1,34 +1,34 @@
 /**
  * https://leetcode-cn.com/problems/longest-palindromic-substring/
- * 
+ *
  * @param {string} s
  * @return {string}
  */
-let longestPalindrome = function(s) {
-  let n = s.length
-  if (n < 2) {
-    return s
-  }
-
-  let begin = 0
-  let max = 1
-
-  let spread = (start, end) => {
-    while (s[start] === s[end] && start >= 0 && end < n) {
-      let len = end - start + 1
-      if (len > max) {
-        max = len
-        begin = start
-      }
-      start--
-      end++
+let longestPalindrome = function (s) {
+  let max = 0 // 当前最大回文串的长度
+  let start = -1 // 当前最大回文串的起始索引
+  const l = s.length // s 的长度
+  for (let i = 0; i < l; i++) {
+    // 遍历 s
+    let now = 1 // 当前回文串的长度
+    let l = i - 1 // 左侧开始遍历的指针
+    while (s[i + 1] === s[i]) {
+      // 如果当前字符后边的字符都一样, 当前长度 + 1,  s遍历指针向后推
+      now++
+      i++
+    }
+    let r = i + 1 // 获取右侧开始遍历的指针
+    while (s[l] === s[r] && s[l] !== undefined) {
+      // 从连续字符两端开始像两侧扩展,直到越界或者不一致,一致的直接累积到当前长度中,修改左右指针
+      now += 2
+      l--
+      r++
+    }
+    if (now > max) {
+      // 判断与之前最大的对比,更新当前最大回文串的起始索引
+      max = now
+      start = l + 1
     }
   }
-
-  for (let mid = 0; mid < n; mid++) {
-    spread(mid, mid)
-    spread(mid, mid + 1)
-  }
-
-  return s.substr(begin, max)
+  return s.substring(start, start + max)
 }
